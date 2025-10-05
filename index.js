@@ -28,3 +28,15 @@ function incrementTime() {
   }
   updateDisplay();
 }
+
+startStopBtn.addEventListener("click", () => {
+  if (!running) {
+    timerInterval = setInterval(incrementTime, 1000);
+    running = true;
+    startStopBtn.textContent = "STOP";
+  } else {
+    clearInterval(timerInterval);
+    running = false;
+    startStopBtn.textContent = "START";
+  }
+});
