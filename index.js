@@ -15,3 +15,16 @@ function updateDisplay() {
   const s = seconds.toString().padStart(2, "0");
   timerDisplay.textContent = `${h}:${m}:${s}`;
 }
+
+function incrementTime() {
+  seconds++;
+  if (seconds >= 60) {
+    seconds = 0;
+    minutes++;
+  }
+  if (minutes >= 60) {
+    minutes = 0;
+    hours++;
+  }
+  updateDisplay();
+}
