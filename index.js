@@ -40,3 +40,13 @@ startStopBtn.addEventListener("click", () => {
     startStopBtn.textContent = "START";
   }
 });
+
+clearText.addEventListener("click", () => {
+  clearInterval(timerInterval);
+  running = false;
+  hours = 0;
+  minutes = 0;
+  seconds = 0;
+  updateDisplay();
+  startStopBtn.textContent = "START";
+});
